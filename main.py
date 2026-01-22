@@ -1,5 +1,6 @@
-import os, discord
-from functions import check_if_time, get_time_until
+import os, discord, zoneinfo
+from datetime import time
+from functions import get_time_until
 from dotenv import load_dotenv
 from discord.ext import tasks
 
@@ -10,10 +11,12 @@ intents.message_content = True
 
 client = discord.Client(intents=intents)
 
-@tasks.loop(minutes=60)
+pst = zoneinfo.ZoneInfo("America/Los_Angeles")
+
+@tasks.loop(time=time(hour=12, minute=0, tzinfo=pst))
 async def japan_reminder():
-    if check_if_time():
-        channel = client.get_channel(int(os.getenv('CHANNEL')))
+    channel = client.get_channel(int(os.getenv('CHANNEL')))
+    if channel:
         countdown_embed = discord.Embed(
             title="Daily Japan Reminder!",
             type="rich",
