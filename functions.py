@@ -1,11 +1,11 @@
-import os
+import os, zoneinfo
 from datetime import *
 from dotenv import load_dotenv
 
 load_dotenv()
 
 def get_time():
-    return datetime.now()
+    return datetime.now(zoneinfo.ZoneInfo("America/Los_Angeles"))
 
 def check_if_time():
     if get_time().hour == 23:
