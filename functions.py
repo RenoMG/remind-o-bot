@@ -8,7 +8,7 @@ def get_time():
     return datetime.now()
 
 def check_if_time():
-    if get_time().hour == 21:
+    if get_time().hour == 22:
         return True
 
 def get_time_until():
