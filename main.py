@@ -2,8 +2,9 @@ from functions import *
 import time
 
 def main():
-    time.sleep(5)
-    print("Hello from remind-o-bot!")
+    while True: 
+        time.sleep(5)
+        print(get_time())
 
 if __name__ == "__main__":
     main()
