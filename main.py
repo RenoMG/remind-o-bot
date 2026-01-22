@@ -21,6 +21,7 @@ async def japan_reminder():
             color=discord.Colour.random()
         )
         countdown_embed.set_image(url="https://media.discordapp.net/attachments/1334389884470956075/1463782087843643427/paid-advance-seat-reservation.png")
+        await channel.send(f"@everyone DAILY JAPAN TIME UPDATE!")
         await channel.send(embed=countdown_embed)
 
 @japan_reminder.before_loop
