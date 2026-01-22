@@ -24,5 +24,3 @@ def get_time_until():
         return "JAPAN TRIP IS ONGOING, TURN OFF THE DAMN BOT!"
     
     return f"{days}d {hours}h {minutes}m {seconds}s"
-
-print(get_time().hour)
