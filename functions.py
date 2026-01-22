@@ -8,7 +8,7 @@ def get_time():
     return datetime.now()
 
 def check_if_time():
-    if get_time().hour == 22:
+    if get_time().hour == 23:
         return True
 
 def get_time_until():
@@ -24,3 +24,5 @@ def get_time_until():
         return "JAPAN TRIP IS ONGOING, TURN OFF THE DAMN BOT!"
     
     return f"{days}d {hours}h {minutes}m {seconds}s"
+
+print(get_time().hour)
