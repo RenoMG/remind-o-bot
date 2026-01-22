@@ -8,7 +8,7 @@ def get_time():
     return datetime.now(zoneinfo.ZoneInfo("America/Los_Angeles"))
 
 def check_if_time():
-    if get_time().hour == 23:
+    if get_time().hour == 12:
         return True
 
 def get_time_until():

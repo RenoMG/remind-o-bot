@@ -10,7 +10,7 @@ intents.message_content = True
 
 client = discord.Client(intents=intents)
 
-@tasks.loop(seconds=5)
+@tasks.loop(minutes=60)
 async def japan_reminder():
     if check_if_time():
         channel = client.get_channel(int(os.getenv('CHANNEL')))
